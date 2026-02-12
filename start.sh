@@ -1,13 +1,9 @@
-
 cd server
 npm install
 npm run build
-
-npm start &
+npm start &       
 
 cd ../client
 npm install
 npm run build
-
-
-npm run preview
+npm run preview    
