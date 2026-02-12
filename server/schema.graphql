@@ -1,7 +1,9 @@
 type Query {
   company(id: ID!): Company
-  """ Mike Note:  ()is to indicate the query can take arguments, and ! is to indicate that the argument is required. """
-  """no ; nor , in GraphQL, just new lines to separate fields."""
+  """
+  Mike Note:  ()is to indicate the query can take arguments, and ! is to indicate that the argument is required.
+  no ; nor , in GraphQL, just new lines to separate fields.
+  """
   job(id: ID!): Job
   jobs(limit: Int, offset: Int): JobSubList
 }
@@ -21,7 +23,9 @@ type Company {
 
 type Job {
   id: ID!
-  """ Mike Note: Comment Format in GraphQL is using ""\" """
+  """
+  Mike Note: Comment Format in GraphQL is using ""\"
+  """
   date: String!
   title: String!
   company: Company!
