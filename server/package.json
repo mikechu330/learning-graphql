@@ -4,7 +4,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "graphql-codegen --config codegen.json && tsc",
     "start": "concurrently \"nodemon src/server.ts\" \"graphql-codegen --config codegen.json --watch\"",
     "codegen": "graphql-codegen --config codegen.json"
   },
