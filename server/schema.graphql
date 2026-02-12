@@ -1,0 +1,45 @@
+type Query {
+  company(id: ID!): Company
+  """ Mike Note:  ()is to indicate the query can take arguments, and ! is to indicate that the argument is required. """
+  """no ; nor , in GraphQL, just new lines to separate fields."""
+  job(id: ID!): Job
+  jobs(limit: Int, offset: Int): JobSubList
+}
+
+type Mutation {
+  createJob(input: CreateJobInput!): Job
+  deleteJob(id: ID!): Job
+  updateJob(input: UpdateJobInput!): Job
+}
+
+type Company {
+  id: ID!
+  name: String!
+  description: String
+  jobs: [Job!]!
+}
+
+type Job {
+  id: ID!
+  """ Mike Note: Comment Format in GraphQL is using ""\" """
+  date: String!
+  title: String!
+  company: Company!
+  description: String
+}
+
+type JobSubList {
+  items: [Job!]!
+  totalCount: Int!
+}
+
+input CreateJobInput {
+  title: String!
+  description: String
+}
+
+input UpdateJobInput {
+  id: ID!
+  title: String!
+  description: String
+}
